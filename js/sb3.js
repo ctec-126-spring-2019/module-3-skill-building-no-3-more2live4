@@ -68,3 +68,19 @@ function main() {
 window.onload = function () {
     main()
 }
+let radio = document.createElement("audio");
+radio.setAttribute("src", "audio/babyshark.mp3");
+radio.setAttribute("loop", "true");
+radioBtn = document.getElementById("radio-btn");
+
+radioBtn.addEventListener("click", function () {
+    if ((' ' + radioBtn.className + ' ').indexOf(' is-active ') > -1) {
+        radioBtn.className = "radio-btn";
+        radio.muted = true;
+    }
+    else {
+        radioBtn.className = "btn radio-btn is active";
+        radio.play();
+        radio.muted = false;
+    }
+});
